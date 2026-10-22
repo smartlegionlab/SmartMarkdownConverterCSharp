@@ -40,20 +40,22 @@
 - Copy result to clipboard with one click
 - Open and save `.md`, `.markdown`, `.html`, `.htm`, `.txt` files
 - Keyboard shortcuts
+- Create desktop shortcut from the app
 - Character counter
 - Custom dark themed dialogs
 
 ## Key Shortcuts
 
-| Shortcut           | Action                  |
-|--------------------|-------------------------|
-| `Ctrl + Enter`     | Convert                 |
-| `Ctrl + Shift + C` | Copy result             |
-| `Ctrl + N`         | Clear all fields        |
-| `Ctrl + O`         | Open file               |
-| `Ctrl + S`         | Save file               |
-| `Ctrl + H`         | Show hotkeys            |
-| `Alt + F4`         | Exit application        |
+| Shortcut           | Action                     |
+|--------------------|----------------------------|
+| `Ctrl + Enter`     | Convert                    |
+| `Ctrl + Shift + C` | Copy result                |
+| `Ctrl + N`         | Clear all fields           |
+| `Ctrl + O`         | Open file                  |
+| `Ctrl + S`         | Save file                  |
+| `Ctrl + H`         | Show hotkeys               |
+| `Ctrl + Shift + S` | Create desktop shortcut    |
+| `Alt + F4`         | Exit application           |
 
 ## Download
 
@@ -85,6 +87,10 @@ smart-markdown-converter-windows-x64.exe
 
 - **Open** (`Ctrl + O`): load `.md`, `.markdown`, `.html`, `.htm`, `.txt` files
 - **Save** (`Ctrl + S`): save result as `.md`, `.html`, `.txt`
+
+### Create Desktop Shortcut
+
+Use **Tools -> Create Desktop Shortcut** or press `Ctrl + Shift + S` to place a shortcut on your desktop.
 
 ## System Requirements
 
