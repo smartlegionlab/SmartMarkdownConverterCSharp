@@ -1,4 +1,4 @@
-# Smart Markdown Converter (C#) <sup>v1.0.2</sup>
+# Smart Markdown Converter (C#) <sup>v1.0.3</sup>
 
 ---
 
