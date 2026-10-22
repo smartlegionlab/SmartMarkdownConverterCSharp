@@ -17,7 +17,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Setup .NET
-        uses: actions/setup-dotnet@v5
+        uses: actions/setup-dotnet@v4
         with:
           dotnet-version: '10.0.x'
 
@@ -25,16 +25,16 @@ jobs:
         run: dotnet restore
 
       - name: Publish
-        run: dotnet publish SmartMarkdownConverterCSharp.csproj -c Release -r win-x64 --self-contained true -p:PublishSingleFile=true -o publish
+        run: dotnet publish SmartPasswordManagerCsharpDesktop/SmartPasswordManagerCsharpDesktop.csproj -c Release -r win-x64 --self-contained true -p:PublishSingleFile=true -o publish
 
       - name: Rename binary
         shell: bash
         run: |
           VERSION="${{ github.event.release.tag_name }}"
-          cp publish/SmartMarkdownConverterCSharp.exe \
-             "smart-markdown-converter-windows-x64-${VERSION}.exe"
+          cp publish/SmartPasswordManagerCsharpDesktop.exe \
+             "smart-password-manager-windows-x64-${VERSION}.exe"
 
       - name: Upload binary to release
         uses: softprops/action-gh-release@v2
         with:
-          files: smart-markdown-converter-windows-x64-${{ github.event.release.tag_name }}.exe
+          files: smart-password-manager-windows-x64-${{ github.event.release.tag_name }}.exe
