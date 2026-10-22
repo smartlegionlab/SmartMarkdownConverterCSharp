@@ -6,11 +6,31 @@
     <Nullable>enable</Nullable>
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
+
+    <Version>1.0.3</Version>
+    <Company>Alexander Suvorov</Company>
+    <Product>Smart Markdown Converter</Product>
+    <Copyright>BSD 3-Clause License</Copyright>
+    <Description>Smart Markdown Converter (C#)</Description>
+    <RepositoryUrl>https://github.com/smartlegionlab/SmartMarkdownConverterCSharp</RepositoryUrl>
+
+    <AssemblyName>SmartMarkdownConverterCSharp</AssemblyName>
+    <ApplicationIcon>app.ico</ApplicationIcon>
+
+    <PublishSingleFile>true</PublishSingleFile>
+    <SelfContained>true</SelfContained>
+    <PublishTrimmed>false</PublishTrimmed>
+    <IncludeAllContentForSelfExtract>true</IncludeAllContentForSelfExtract>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="Markdig" Version="1.4.2" />
     <PackageReference Include="ReverseMarkdown" Version="6.3.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="app.ico" />
+    <EmbeddedResource Include="app.ico" />
   </ItemGroup>
 
 </Project>

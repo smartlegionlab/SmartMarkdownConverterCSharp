@@ -52,6 +52,22 @@ namespace SmartMarkdownConverter
             this.BackColor = DarkBg;
             this.Font = new Font("Segoe UI", 10);
 
+            try
+            {
+                var assembly = System.Reflection.Assembly.GetExecutingAssembly();
+                using (var stream = assembly.GetManifestResourceStream("SmartMarkdownConverterCSharp.app.ico"))
+                {
+                    if (stream != null)
+                    {
+                        this.Icon = new Icon(stream);
+                    }
+                }
+            }
+            catch
+            {
+                this.Icon = SystemIcons.Application;
+            }
+
             menuStrip = new MenuStrip
             {
                 BackColor = Color.FromArgb(25, 25, 25),
