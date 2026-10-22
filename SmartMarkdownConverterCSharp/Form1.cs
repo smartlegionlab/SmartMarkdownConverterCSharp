@@ -3,6 +3,7 @@ using System.Drawing;
 using System.Windows.Forms;
 using Markdig;
 using ReverseMarkdown;
+using SmartMarkdownConverter.Helpers;
 
 namespace SmartMarkdownConverter
 {
@@ -129,6 +130,17 @@ namespace SmartMarkdownConverter
             convertMenu.BackColor = Color.FromArgb(25, 25, 25);
             convertMenu.ForeColor = DarkText;
 
+            ToolStripMenuItem toolsMenu = new ToolStripMenuItem("Tools");
+
+            ToolStripMenuItem createShortcutItem = new ToolStripMenuItem("Create Desktop Shortcut", null, (s, e) => CreateDesktopShortcut());
+            createShortcutItem.ShortcutKeys = Keys.Control | Keys.Shift | Keys.S;
+            createShortcutItem.BackColor = Color.FromArgb(25, 25, 25);
+            createShortcutItem.ForeColor = DarkText;
+
+            toolsMenu.DropDownItems.Add(createShortcutItem);
+            toolsMenu.BackColor = Color.FromArgb(25, 25, 25);
+            toolsMenu.ForeColor = DarkText;
+
             ToolStripMenuItem helpMenu = new ToolStripMenuItem("Help");
 
             ToolStripMenuItem hotkeysItem = new ToolStripMenuItem("Hotkeys", null, (s, e) => ShowHotkeys());
@@ -144,7 +156,7 @@ namespace SmartMarkdownConverter
             helpMenu.BackColor = Color.FromArgb(25, 25, 25);
             helpMenu.ForeColor = DarkText;
 
-            menuStrip.Items.AddRange(new ToolStripItem[] { fileMenu, editMenu, convertMenu, helpMenu });
+            menuStrip.Items.AddRange(new ToolStripItem[] { fileMenu, editMenu, convertMenu, toolsMenu, helpMenu });
 
             topPanel = new Panel
             {
@@ -499,7 +511,17 @@ namespace SmartMarkdownConverter
                     BtnCopy_Click(null, null);
                     e.Handled = true;
                 }
+                if (e.Control && e.Shift && e.KeyCode == Keys.S)
+                {
+                    CreateDesktopShortcut();
+                    e.Handled = true;
+                }
             };
+        }
+
+        private void CreateDesktopShortcut()
+        {
+            ShellShortcut.CreateDesktopShortcut();
         }
 
         private void BtnConvert_Click(object sender, EventArgs e)
@@ -686,6 +708,7 @@ namespace SmartMarkdownConverter
                             "Ctrl + O         - Open File\n" +
                             "Ctrl + S         - Save File\n" +
                             "Ctrl + H         - Show Hotkeys\n" +
+                            "Ctrl + Shift + S - Create Desktop Shortcut\n" +
                             "Alt + F4         - Exit";
 
             Form dialog = new Form
