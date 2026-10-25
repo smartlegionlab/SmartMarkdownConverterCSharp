@@ -821,7 +821,7 @@ namespace SmartMarkdownConverter
 
             Label versionLabel = new Label
             {
-                Text = "Version 1.0.4",
+                Text = "Version 1.0.5",
                 Font = new Font("Segoe UI", 11),
                 ForeColor = DarkText,
                 Location = new Point(110, 55),
